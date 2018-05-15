@@ -1,0 +1,42 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: metrodockerdemo-deployment
+  labels:
+    app: metrodockerdemo
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: metrodockerdemo
+  template:
+    metadata:
+      labels:
+        app: metrodockerdemo
+    spec:
+      containers:
+      - name: metrodockerdemo
+        image: mbijeff/metrodockerdemo:latest
+        ports:
+        - containerPort: 80
+        livenessProbe:
+          httpGet:
+             path: /
+             port: 80
+          initialDelaySeconds: 15
+          timeoutSeconds: 30
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: metrodockerdemo-service
+spec:
+  selector:
+    app: metrodockerdemo
+  type: NodePort
+  ports:
+  - nodePort: 30001
+    protocol: TCP
+    port: 80
+    targetPort: 80
+#testing v1
