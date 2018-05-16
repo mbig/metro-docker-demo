@@ -29,14 +29,14 @@ spec:
 kind: Service
 apiVersion: v1
 metadata:
-  name: metrodockerdemo-service
+  name: metrodockerdemo-service-v1
 spec:
   selector:
-    app: metrodockerdemo
+    app: metrodockerdemo-v1
   type: NodePort
   ports:
   - nodePort: 30001
     protocol: TCP
     port: 80
     targetPort: 80
-#testing v1
+#testing v2
