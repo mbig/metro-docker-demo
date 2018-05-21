@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: metrodockerdemo
-        image: index.docker.io/mbijeff/metro-docker-demo:v2
+        image: index.docker.io/mbijeff/metro-docker-demo
         ports:
         - containerPort: 80
         livenessProbe:
