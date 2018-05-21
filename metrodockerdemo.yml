@@ -35,7 +35,7 @@ spec:
     app: metrodockerdemo-v1
   type: NodePort
   ports:
-  - nodePort: 30002
+  - nodePort: 31010
     protocol: TCP
     port: 80
     targetPort: 80
