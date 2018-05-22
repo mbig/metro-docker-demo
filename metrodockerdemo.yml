@@ -32,10 +32,10 @@ metadata:
   name: metrodockerdemo-service-v1
 spec:
   selector:
-    app: metrodockerdemo-v1
+    app: metrodockerdemo
   type: NodePort
   ports:
-  - nodePort: 31010
+  - nodePort: 30001
     protocol: TCP
     port: 80
     targetPort: 80
