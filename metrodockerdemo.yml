@@ -5,7 +5,7 @@ metadata:
   labels:
     app: metrodockerdemo
 spec:
-  replicas: 1
+  replicas: 3
   selector:
     matchLabels:
       app: metrodockerdemo
